@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+    {#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">#}
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {#<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">#}
+
+    <title>{% block title %}KIA Trans!{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    {#<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    {% block stylesheets %}
+
+    {% endblock %}
+
+
+    {#<script src="{{ asset('bundles/libs/js/carousel.js') }}"></script>#}
+    {#<script src="{{ asset('bundles/libs/js/bootstrap.min.js') }}"></script>#}
+
+
+    {#<link rel="stylesheet" href="{{ asset('bundles/libs/css/bootstrap.min.css') }}" />#}
+    <link rel="stylesheet" href="{{ asset('../bundles/libs/css/style.css') }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    {#<script src="{{ asset('bundles/libs/js/carousel.js') }}"></script>#}
+    {#<script src="{{ asset('bundles/libs/js/bootstrap.min.js') }}"></script>#}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">#}
+
+    {#<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>#}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <a class="navbar-brand" href="/">KIA Trans</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/app_dev.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/app_dev.php/contacts">Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutus">About us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="">
+
+    <div class="row">
+        <div class="col-md-12">
+            {% for flash_message in app.session.flashbag.get('notice') %}
+                <div class="alert alert-success">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+            {% block body %}
+
+            {% endblock %}
+        </div>
+
+    </div>
+
+
+</div><!-- /.container -->
+
+{% block javascripts %}
+
+
+    {#<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
+{% endblock %}
+
+
+</body>
+</html>
